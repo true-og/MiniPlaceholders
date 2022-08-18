@@ -3,11 +3,16 @@ plugins {
     `maven-publish`
 }
 
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     compileOnly("net.kyori:adventure-api:4.11.0")
     compileOnly("net.kyori:adventure-text-minimessage:4.11.0")
     compileOnly("net.kyori:adventure-text-serializer-legacy:4.11.0")
     compileOnly(project(":miniplaceholders-connect"))
+    implementation("com.google.code.gson:gson:2.9.1")
     testImplementation(platform("org.junit:junit-bom:5.8.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("net.kyori:adventure-api:4.11.0")

@@ -13,7 +13,7 @@ dependencies {
     compileOnly("com.mojang:brigadier:1.0.18")
 }
 
-blossom{
+blossom {
     replaceToken("{version}", version)
     replaceTokenIn("src/main/java/me/dreamerzero/miniplaceholders/common/PluginConstants.java")
 }

@@ -10,6 +10,10 @@ allprojects {
     group = "me.dreamerzero.miniplaceholders"
     version = "1.2.0"
     description = "MiniPlaceholders"
+
+    repositories {
+        mavenCentral()
+    }
 }
 
 dependencies {
@@ -22,7 +26,6 @@ dependencies {
 
 subprojects {
     repositories {
-        mavenCentral()
         maven("https://papermc.io/repo/repository/maven-public/")
         maven("https://repo.maven.apache.org/maven2/")
     }

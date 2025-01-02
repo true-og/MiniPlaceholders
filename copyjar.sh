@@ -6,4 +6,4 @@ VERSION="$1"
 mkdir -p build/libs
 
 # Copy and rename the jar, using $VERSION in the final filename
-cp paper/build/libs/miniplaceholders-paper-*-SNAPSHOT.jar "build/libs/MiniPlaceholders-${VERSION}.jar"
+cp jar/MiniPlaceholders*.jar "build/libs/MiniPlaceholders-${VERSION}.jar"

@@ -12,22 +12,20 @@ dependencies {
     implementation(libs.cloud.paper)
 }
 
-tasks {
-    runServer {
-        minecraftVersion("1.20.2")
-    }
-    processResources {
-        filesMatching("paper-plugin.yml") {
-            expand("version" to project.version)
-        }
+tasks.named<ProcessResources>("processResources") {
+    val pluginVersion = project.version.toString()
+
+    inputs.property("version", pluginVersion)
+    filesMatching("paper-plugin.yml") {
+        expand("version" to pluginVersion)
     }
 }
 
-tasks.named("assemble").configure {
+tasks.named("assemble") {
     dependsOn("shadowJar")
 }
 
-tasks.register("runCopyJarScript", Exec::class) {
+tasks.register<Exec>("runCopyJarScript") {
     group = "build"
     description = "Runs the copyjar.sh script after build completion."
     workingDir(rootDir)

@@ -41,10 +41,10 @@ arrayOf(
     "kotlin-ext",
     "common",
     "paper",
-    "velocity",
+    //"velocity",
     //"krypton",
-    "fabric",
-    "sponge"
+    //"fabric"
+    //"sponge"
 ).forEach {
     include("miniplaceholders-$it")
     project(":miniplaceholders-$it").projectDir = file(it)
